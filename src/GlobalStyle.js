@@ -7,10 +7,7 @@ const GlobalStyle = createGlobalStyle`
 
 
 /* @import url('https://fonts.googleapis.com/css2?family=Meddon&display=swap'); */
-@font-face {
-  font-family:'Meddon', cursive; ;
-  src: url('https://fonts.googleapis.com/css2?family=Meddon&display=swap');
-}
+
 
 
   body {
