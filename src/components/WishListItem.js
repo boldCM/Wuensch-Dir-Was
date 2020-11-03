@@ -7,15 +7,16 @@ const Container = styled.div`
   border-radius: 5px;
   box-shadow: 0 10px 20px lightblue;
 `;
-
-export default function WishListItem({ title }) {
+// theoretisch war hier title importiert für title="Caro"
+export default function WishListItem({ goToDetailsLink }) {
   return (
     <>
-      <Container>{title}</Container>
+      <Container>{goToDetailsLink}</Container>
     </>
   );
 }
 
 WishListItem.propTypes = {
-  title: PropTypes.string.isRequired,
+  // title: PropTypes.string.isRequired,
+  goToDetailsLink: PropTypes.element.isRequired,
 };

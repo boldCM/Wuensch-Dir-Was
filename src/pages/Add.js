@@ -1,5 +1,5 @@
 import styled from 'styled-components/macro';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 
 const AddContainer = styled.div`
   border: 1px solid red;

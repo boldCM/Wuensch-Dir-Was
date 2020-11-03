@@ -16,7 +16,11 @@ function App() {
           <Details />
         </Route>
         <Route path="/">
-          <Welcome />
+          <Welcome
+            // title="Caro"
+            goToDetailsLink={<Link to="/Details">Caro</Link>}
+            goToAddLink={<Link to="/Add">+</Link>}
+          />
         </Route>
       </Switch>
     </Router>

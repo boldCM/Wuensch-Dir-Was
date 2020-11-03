@@ -1,6 +1,5 @@
 import styled from 'styled-components/macro';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
 import Button from '../components/Button';
 import WishListItem from '../components/WishListItem';
 
@@ -9,17 +8,20 @@ const ContainerWelcome = styled.div`
   border-radius: 10px;
 `;
 
-export default function Welcome() {
+// theoretisch wurde hier title für die WishListItem übergeben
+export default function Welcome({ goToDetailsLink, goToAddLink }) {
   return (
     <>
       <ContainerWelcome>
-        <WishListItem title="Caro">
-          <Link to="/Details" />
-        </WishListItem>
-        <Link to="/Add">
-          <Button>+</Button>
-        </Link>
+        <WishListItem goToDetailsLink={goToDetailsLink} />
+        <Button>{goToAddLink}</Button>
       </ContainerWelcome>
     </>
   );
 }
+
+Welcome.propTypes = {
+  // title: PropTypes.string.isRequired,
+  goToAddLink: PropTypes.element.isRequired,
+  goToDetailsLink: PropTypes.element.isRequired,
+};
