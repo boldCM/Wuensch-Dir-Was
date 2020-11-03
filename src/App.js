@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import Button from './components/Button';
 import GlobalStyle from './GlobalStyle';
 import WishListItem from './components/WishListItem';
@@ -8,10 +8,13 @@ function App() {
     <Router>
       <GlobalStyle />
       <Switch>
-        <Route path="/">
+        <Route exact path="/">
           <WishListItem title="Caro" />
-          <Button>+</Button>
+          <Link to="WishList">
+            <Button>+</Button>
+          </Link>
         </Route>
+        <Route path="/WishList" />
       </Switch>
     </Router>
   );
