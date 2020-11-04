@@ -23,8 +23,8 @@ export default function Welcome({ goToDetailsLink, goToAddLink }) {
   return (
     <>
       <ContainerWelcome>
-        <Link to="/philipp">Philipp&apos;s Wishlist</Link>
-        <Link to="/leon">Leon&apos;s Wishlist</Link>
+        {/* <Link to="/philipp">Philipp&apos;s Wishlist</Link>
+        <Link to="/leon">Leon&apos;s Wishlist</Link> */}
         {lists?.map((list) => (
           <Link key={list.id} to={`/${list.id}`}>
             {list.title}
