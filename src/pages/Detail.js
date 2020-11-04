@@ -19,8 +19,14 @@ export default function Details() {
   return (
     <>
       <DetailsContainer>
-        Write some Wishes for
-        <Link to={`/${listId}`}> {list?.title}</Link>
+        Write some Wishes for &nbsp;
+        {list?.title}
+        <ul>
+          {list?.items.map((item) => (
+            <li key={item}>{item}</li>
+          ))}
+        </ul>
+        <Link to="/">Back</Link>
       </DetailsContainer>
     </>
   );
