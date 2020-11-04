@@ -1,20 +1,41 @@
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
-import Button from './components/Button';
+import styled from 'styled-components';
 import GlobalStyle from './GlobalStyle';
-import WishListItem from './components/WishListItem';
+import AddPage from './pages/Add';
+import Details from './pages/Detail';
+import Welcome from './pages/Welcome';
+import Header from './components/Header';
+
+const GoToLink = styled(Link)`
+  /* fill:white; */
+  display: inline-grid;
+  text-align: center;
+
+  border: none;
+  background: transparent;
+  text-decoration: none;
+`;
 
 function App() {
   return (
     <Router>
       <GlobalStyle />
+      <Header />
+
       <Switch>
-        <Route exact path="/">
-          <WishListItem title="Caro" />
-          <Link to="WishList">
-            <Button>+</Button>
-          </Link>
+        <Route path="/Add">
+          <AddPage />
         </Route>
-        <Route path="/WishList" />
+        <Route path="/:details">
+          <Details />
+        </Route>
+        <Route path="/">
+          <Welcome
+            // title="Caro"
+            goToDetailsLink={<GoToLink to="/:details">Caro</GoToLink>}
+            goToAddLink={<GoToLink to="/Add">+</GoToLink>}
+          />
+        </Route>
       </Switch>
     </Router>
   );
