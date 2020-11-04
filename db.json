@@ -1,0 +1,12 @@
+{
+  "lists": [
+    {
+      "id": 1,
+      "title": "Philipp's List"
+    },
+    {
+      "id": 2,
+      "title": "Leon's List"
+    }
+  ]
+}
