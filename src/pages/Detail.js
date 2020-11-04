@@ -16,6 +16,11 @@ export default function Details() {
     const newList = await getListById(listId);
     setList(newList);
   }, []);
+
+  if (!list) {
+    return <div>Loading...</div>;
+  }
+
   return (
     <>
       <DetailsContainer>
