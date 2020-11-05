@@ -17,7 +17,7 @@ export default function AddPage() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    await postList({ title });
+    await postList({ title, items: [] });
     setTitle('');
   };
 
