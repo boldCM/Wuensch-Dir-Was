@@ -26,13 +26,13 @@ function App() {
         <Route path="/Add">
           <AddPage />
         </Route>
-        <Route path="/:details">
+        <Route path="/:listId">
           <Details />
         </Route>
         <Route path="/">
           <Welcome
             // title="Caro"
-            goToDetailsLink={<GoToLink to="/:details">Caro</GoToLink>}
+            goToDetailsLink={<GoToLink to="/:listId">Caro</GoToLink>}
             goToAddLink={<GoToLink to="/Add">+</GoToLink>}
           />
         </Route>
