@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import styled from 'styled-components/macro';
 import Button from '../components/Button';
+import { postList } from '../api/lists';
 // import PropTypes from 'prop-types';
 
 const AddContainer = styled.div`
@@ -8,16 +9,18 @@ const AddContainer = styled.div`
 `;
 
 export default function AddPage() {
-  const [value, setValue] = useState('');
+  const [title, setTitle] = useState('');
 
   const onChange = (event) => {
-    setValue(event.target.value);
+    setTitle(event.target.value);
   };
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     event.preventDefault();
     // eslint-disable-next-line no-alert
-    alert(`submitted ${value}`);
+    alert(`submitted ${title}`);
+    await postList({ title });
+    setTitle('');
   };
 
   return (
@@ -25,8 +28,13 @@ export default function AddPage() {
       <AddContainer>
         Add a new List for
         <form onSubmit={handleSubmit}>
-          <label placeholder="Enter Name">
-            <input type="text" value={value} onChange={onChange} />
+          <label>
+            <input
+              type="text"
+              value={title}
+              onChange={onChange}
+              placeholder="Enter Name"
+            />
           </label>
           <Button type="submit">Add</Button>
         </form>

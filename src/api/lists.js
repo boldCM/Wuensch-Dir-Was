@@ -9,3 +9,13 @@ export async function getListById(id) {
   const list = await response.json();
   return list;
 }
+
+export async function postList(title) {
+  await fetch(`http://localhost:5000/lists`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json;charset=utf-8',
+    },
+    body: JSON.stringify(title),
+  });
+}
