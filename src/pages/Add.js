@@ -17,8 +17,6 @@ export default function AddPage() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
-    // eslint-disable-next-line no-alert
-    alert(`submitted ${title}`);
     await postList({ title });
     setTitle('');
   };
