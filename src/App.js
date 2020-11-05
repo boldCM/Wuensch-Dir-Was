@@ -31,9 +31,9 @@ function App() {
         </Route>
         <Route path="/">
           <Welcome
-            // title="Caro"
             goToDetailsLink={<GoToLink to="/:listId">Caro</GoToLink>}
             goToAddLink={<GoToLink to="/Add">+</GoToLink>}
+            // title="Caro"
           />
         </Route>
       </Switch>
