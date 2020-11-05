@@ -12,7 +12,8 @@ const ContainerWelcome = styled.div`
 `;
 
 // theoretisch wurde hier title für die WishListItem übergeben
-export default function Welcome({ goToDetailsLink, goToAddLink }) {
+// hier war mal goToDetailsLink aus der App geholt worden in den Argemunten
+export default function Welcome({ goToAddLink }) {
   const [lists, setLists] = useState(null);
 
   useEffect(async () => {
@@ -26,7 +27,6 @@ export default function Welcome({ goToDetailsLink, goToAddLink }) {
         <WishListItem
           goToDetailsLink={lists?.map((list) => (
             <li>
-              {' '}
               <Link key={list.id} to={`/${list.id}`}>
                 {list.title}
               </Link>
@@ -42,5 +42,5 @@ export default function Welcome({ goToDetailsLink, goToAddLink }) {
 Welcome.propTypes = {
   // title: PropTypes.string.isRequired,
   goToAddLink: PropTypes.element.isRequired,
-  goToDetailsLink: PropTypes.element.isRequired,
+  // goToDetailsLink: PropTypes.element.isRequired,
 };
