@@ -10,12 +10,18 @@ export async function getListById(id) {
   return list;
 }
 
+
 export async function postList(title) {
   await fetch(`http://localhost:5000/lists`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json;charset=utf-8',
     },
-    body: JSON.stringify(title),
+    body: JSON.stringify(title),}
+
+export async function deleteListById(id) {
+  await fetch(`http://localhost:5000/lists/${id}`, {
+    method: 'DELETE',
+
   });
-}
+
